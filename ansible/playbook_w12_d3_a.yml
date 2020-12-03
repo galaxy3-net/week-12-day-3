@@ -6,7 +6,7 @@
   vars:
     apt_pkgs:
       - docker.io
-      - python-pip
+      - python3-pip
     pip3_pkgs:
       - docker
 
