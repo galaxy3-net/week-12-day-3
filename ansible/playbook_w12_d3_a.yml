@@ -31,3 +31,11 @@
         name: "{{ item }}"
         state: present
       loop: "{{ pip3_pkgs }}"
+
+    - name: download and launch a docker web container
+      docker_container:
+        name: dvwa
+        image: cyberxsecurity/dvwa
+        state: started
+        restart_policy: always
+        published_ports: 80:80
