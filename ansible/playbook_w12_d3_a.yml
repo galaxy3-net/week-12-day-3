@@ -12,8 +12,7 @@
 
   tasks:
 
-    - name: What's the hostname?
-      debug:
+    - debug:
         msg: "{{ inventory_hostname }}"
 
     - name: Install apt packages.
