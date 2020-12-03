@@ -1,0 +1,26 @@
+---
+
+- name: Config Web VM with Docker
+  hosts: web
+  become: true
+  vars:
+    apt_pkgs:
+      - docker.io
+      - python-pip
+    pip3_pkgs:
+      - docker
+
+  tasks:
+
+    - name: Install apt packages.
+      apt:
+        update_cache: yes
+        name: "{{ item }}"
+        state: present
+      loop: "{{ apt_pkgs }}"
+
+    - name: Install Pip3 packages.
+      pip:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ pip3_pkgs }}"
