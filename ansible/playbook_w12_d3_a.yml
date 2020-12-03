@@ -1,9 +1,5 @@
 ---
 
-- name: What's the hostname?
-  debug:
-    msg: "{{ inventory_hostname }}"
-
 - name: Config Web VM with Docker
   hosts: webservers
   become: true
@@ -15,6 +11,10 @@
       - docker
 
   tasks:
+
+    - name: What's the hostname?
+      debug:
+        msg: "{{ inventory_hostname }}"
 
     - name: Install apt packages.
       apt:
