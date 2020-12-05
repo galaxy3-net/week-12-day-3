@@ -37,7 +37,7 @@
         name: dvwa
         image: cyberxsecurity/dvwa
         auto_remove: no
-        hostname: "{{ inventory_hostname }}"
+        hostname: "dvwa-{{ inventory_hostname }}"
         state: started
         restart_policy: always
         published_ports: 80:80
