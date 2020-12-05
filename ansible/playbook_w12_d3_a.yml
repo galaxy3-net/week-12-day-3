@@ -36,7 +36,7 @@
       docker_container:
         name: dvwa
         image: cyberxsecurity/dvwa
-        auto_remove: yes
+        auto_remove: no
         hostname: "{{ inventory_hostname }}"
         state: started
         restart_policy: always
