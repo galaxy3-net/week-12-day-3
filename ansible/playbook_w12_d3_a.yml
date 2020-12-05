@@ -36,6 +36,8 @@
       docker_container:
         name: dvwa
         image: cyberxsecurity/dvwa
+        auto_remove: yes
+        hostname: "{{ inventory_hostname }}"
         state: started
         restart_policy: always
         published_ports: 80:80
